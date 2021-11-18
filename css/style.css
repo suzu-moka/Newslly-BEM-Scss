@@ -29,6 +29,7 @@ a {
   width: 80%;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 100px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,13 +71,13 @@ a {
 
 /* main -------------------------------------------------------------------------------------*/
 main .main__inner {
+  /* card -------------------------------------------------------------------------------------*/
+}
+main .main__inner .news {
   width: 80%;
   max-width: 1000px;
   margin: 0 auto;
-}
-main .main__inner .news {
-  margin-top: 0;
-  margin-bottom: 60px;
+  padding: 0 100px 0;
 }
 main .main__inner .news .news__title {
   padding-top: 0;
@@ -152,10 +153,63 @@ main .main__inner .news .news__list article:nth-of-type(2) {
 }
 main .main__inner .news .news__list article:nth-of-type(3) {
   margin-top: 30px;
-  margin-bottom: 0;
+  margin-bottom: 60px;
 }
 main .main__inner .news .news__list article:nth-of-type(4) {
   margin-top: 30px;
-  margin-bottom: 0;
+  margin-bottom: 60px;
+}
+main .main__inner .card {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 100px 0;
+  background-color: #F6F8F9;
+}
+main .main__inner .card .card__inner {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #F6F8F9;
+}
+main .main__inner .card .card__inner .card__title {
+  padding-top: 0;
+  padding-bottom: 30px;
+  color: #202124;
+  border-bottom: 1px solid #EBEDED;
+}
+main .main__inner .card .card__inner .card__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+main .main__inner .card .card__inner .card__list .card__tile {
+  max-width: 380px;
+  background-color: #fff;
+}
+main .main__inner .card .card__inner .card__list .card__subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 35px 35px 0 35px;
+}
+main .main__inner .card .card__inner .card__list .card__text {
+  margin: 10px 35px 0 35px;
+}
+main .main__inner .card .card__inner .card__list .card__link {
+  border: 1px solid #fff;
+  margin: 30px 35px 34px 35px;
+}
+main .main__inner .card .card__inner .card__list article:nth-of-type(odd) {
+  margin-right: 20px;
+}
+main .main__inner .card .card__inner .card__list article:nth-of-type(even) {
+  margin-left: 20px;
 }
 /*# sourceMappingURL=style.css.map */
