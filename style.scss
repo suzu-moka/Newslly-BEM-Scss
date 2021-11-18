@@ -1,6 +1,9 @@
 @charset "utf-8";
 $color-text: #A6ADB4;
 $color-heading: #343638;
+$color-line: #EBEDED;
+$color-title: #202124;
+$color-accent:#FA6980;
 
 @mixin inner($width: 1000px) {
     width: 80%;
@@ -19,17 +22,30 @@ $color-heading: #343638;
     padding: 0;
 }
 
-@mixin margin($top: 30px, $bottom: 60px) {
-    margin-top: $top;
-    margin-bottom: $bottom;
-
+@mixin padding($top: 30px, $bottom: 60px) {
+    padding-top: $top;
+    padding-bottom: $bottom;
 }
 
+@mixin magin($top: 30px, $bottom: 60px){
+    margin-top: $top;
+    margin-bottom: $bottom;
+}
+
+@mixin title (){
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@mixin subtilte (){
+    font-size: 18px;
+    font-weight: bold;
+}
 
 body{
   color: $color-text;
   font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.75;
+  line-height: (24/ 14);
 }
 
 img{
@@ -42,28 +58,106 @@ li{
   list-style: none;
 }
 
+a{
+    text-decoration: none;
+}
 
-/* header */
+
+/* header -------------------------------------------------------------------------------------*/
 .header{
+    @include padding(30px,0);
+    @include magin(0,60px);
     &__inner{
         @include inner();
         @include flex();
     }
     .logo{
-
     }
     .nav{
         .gnav{
             @include gnav();
             @include flex();
+            @include magin(30px,30px);
             .gnav-list{
                 margin-left: 20px;
+                color: $color-text;
+                .gnav__link{
+                    color: $color-text;
+                }
             }
             li:first-of-type{
-                color: $color-heading;
+                .gnav__link{
+                    color: $color-heading;
+                }
             }
         }
     }
 }
 
-/* main */
+
+/* main -------------------------------------------------------------------------------------*/
+main{
+    .main__inner{
+        @include inner();
+        .news{
+            @include magin(0,60px);
+            .news__title{
+                @include padding(0, 30px);
+                @include title();
+                color: $color-title;
+                border-bottom: 1px solid $color-line;
+            }
+            .news__list{
+                @include flex(center, flex-start);
+                .news__tile{
+                   max-width: 50%;
+                    .news__category{
+                        .category__link{
+                            color: $color-accent;
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
+                    .news__subtitle{
+                        @include magin(5px, 10px);
+                        @include subtilte();
+                        color: $color-title;
+                    }
+                    .news__text{
+                        font-size: 14px;
+                    }
+                    .news__time{
+                        @include flex( flex-start, );
+                        @include magin(20px, 0);
+                        vertical-align: middle;
+                        img{
+                        }
+                        .news__day{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                article:nth-of-type(odd){
+                    padding-right: 20px;
+                }
+                article:nth-of-type(even){
+                    padding-left: 20px;
+                }
+                article:nth-of-type(1){
+                    @include magin(30px, 30px);
+                }
+                article:nth-of-type(2){
+                    @include magin(30px, 30px);
+                }
+                article:nth-of-type(3){
+                    @include magin(30px, 0);
+                }
+                article:nth-of-type(4){
+                    @include magin(30px, 0);
+                }
+
+            }
+
+        }
+    }
+}
