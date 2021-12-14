@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+@mixin flex($j:space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+}
+
+
+
+
+
+
+
+
+
+
+body{
+    max-width: 1280px;
+    text-align: center;
+}
+
+li{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+header{
+    .header__inner{
+        @include flex();
+        padding: 0 48px;
+        margin: auto;
+        .cocoro{
+            img{
+
+            }
+        }
+        .subtitle{
+
+        }
+        .nav{
+            .gnav{
+                @include flex();
+                .gnav__list{
+                    
+                    li{
+
+                    }
+                }
+            }
+        }
+    }
+}
